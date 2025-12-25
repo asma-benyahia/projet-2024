@@ -13,7 +13,10 @@ public class Crowbar extends Weapon {
         return "Crowbar";
     }
 
-
+    @Override
+    public String getName() {
+        return "Crowbar"; 
+    }
 
     @Override
     public boolean canOpenDoor() {

@@ -5,6 +5,9 @@ import plateau.equipment.tool.Tool;
 import plateau.equipment.weapon.Weapon;
 import plateau.gamecharacter.Survivor;
 
+/**
+ * Actin allowing a survivor to use the equipment in his hand
+ */
 public class UseEquipementAction extends Action {
 
     public UseEquipementAction() {

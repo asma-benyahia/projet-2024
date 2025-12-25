@@ -1,14 +1,11 @@
 package plateau;
 
 import java.util.*;
-
-
-import plateau.gamecharacter.*;
-import plateau.listchooser.RandomListChooser;
-import plateau.role.*;
 import plateau.equipment.Equipment;
 import plateau.equipment.tool.*;
 import plateau.equipment.weapon.*;
+import plateau.gamecharacter.*;
+import plateau.role.*;
 import plateau.room.Room;
 // Pour le moment on a bien a chaque fois le tour de survivor , et ouis on a le toue de zombies puis fin de tour 
 // on le verifie avec laffichage de chaque Phase et le i qui nous compte le tour combien
@@ -200,10 +197,17 @@ public class Game {
 	 */
 	private boolean isGameOver() {
 	    // Le jeu est terminé si l'une des conditions est remplie
-		boolean res = enoughExperience()|| survivorsEliminate() || zombiesEliminate() ;
-	    System.out.println("Game over: " + res);
-	    return res;
-	    
+		boolean exp = enoughExperience();
+    	boolean survivors = survivorsEliminate();
+    	boolean zombies = zombiesEliminate();
+    
+    	System.out.println("=== Condition fin de jeu ===");
+    	System.out.println("Expérience >= 30: " + exp);
+    	System.out.println("Survivants éliminés: " + survivors);
+    	System.out.println("Zombies éliminés: " + zombies);
+    	System.out.println("===========================");
+    
+    	return exp || survivors || zombies;   
 	}
 	
 	
@@ -262,11 +266,9 @@ public class Game {
 					Room room = (Room) cell;
 					int numEquipements = random.nextInt(3) + 1;
 					for (int k = 0; k < numEquipements; k++) {
-						Equipment equipment = generateRandomEquipment();
+						Equipment equipment = board.generateRandomEquipment();
 						room.addEquipment(equipment);
-						System.out.println(cell.getEquipment().size() + " " + equipment.descriptionEquipement()
-								+ " ajouté(s) à la case : [" + cell.getX() + "][" + cell.getY() + "]");
-						System.out.println("");
+						System.out.println(" Equipement ajouté: " + equipment.getName() + " à la case : [" + i + "][" + j + "]");
 					}
 				}
 			}

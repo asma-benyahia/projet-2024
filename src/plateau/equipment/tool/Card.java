@@ -2,7 +2,6 @@ package plateau.equipment.tool;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import plateau.*;
 import plateau.gamecharacter.Survivor;
 import plateau.gamecharacter.Zombie;
@@ -23,6 +22,11 @@ public class Card extends Tool {
 
     @Override
     public String descriptionEquipement() {
+        return "Card";
+    }
+
+    @Override
+    public String getName() {
         return "Card";
     }
 

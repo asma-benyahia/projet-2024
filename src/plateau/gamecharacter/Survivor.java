@@ -1,22 +1,15 @@
 package plateau.gamecharacter;
 
+import java.util.*;
 import plateau.*;
-//import plateau.action.SearchARoomAction;
 import plateau.action.*;
 import plateau.equipment.Equipment;
 import plateau.equipment.tool.Tool;
-//import plateau.equipment.tool.Tool;
-// import plateau.equipment.weapon.Weapon;
 import plateau.equipment.weapon.Rifle;
 import plateau.equipment.weapon.Weapon;
 import plateau.gamecharacter.exception.*;
-
-import java.util.*;
-import plateau.listchooser.InteractiveListChooser;
-import plateau.listchooser.ListChooser;
 import plateau.listchooser.RandomListChooser;
 import plateau.role.Role;
-import plateau.role.Snooper;
 
 public class Survivor extends GameCharacter {
 	protected int expertLevel;
