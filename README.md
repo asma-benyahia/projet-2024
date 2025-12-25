@@ -18,16 +18,19 @@
 
 UML LIVRABLE 1 : ![](./UML_Livrable_1.jpg)
 
-Algorithme de création : https://notability.com/n/0VV0s91VxEOeRLwi86ZlQF 
+Algorithme de création : ![](./Algorithme_de_creation.jpg)
 
-POUR COMPILER : 
+- Pour compiler : 
 ```javac -sourcepath src src/plateau/*.java -d classes```
-POUR EXECUTER : 
-```java -classpath classes plateau.BoardMain 10 10```
-EXEMPLE AVEC LARG ET HAUT 10X10 :
-```java -classpath classes plateau.BoardMain 10 10
-Plateau de jeu  :
 
+- Pour exécuter : 
+```java -classpath classes plateau.BoardMain 10 10```
+
+- Exemple avec largeur et hauteur 10X10 :
+```java -classpath classes plateau.BoardMain 10 10```
+
+Plateau de jeu  :
+```
  P  r  r |S| r  r  r |E| r  r  
  r  r  r |S| r  r  r |S| r  r  
  r  r  r |S| r  r  r |S| r  r  
@@ -72,7 +75,7 @@ Affiche le plateau de jeu.
 
 ### Difficultés restant à résoudre
 - On a pas réussi a afficher correctement les portes donc on a laissé pour la semaine prochaine 
-- On a eu un problème dans la compilation des test 
+- On a eu un problème dans la compilation des tests 
 
 ### Evolution 
 - modification des methodes de board et ajout des methodes private void +nomdeMethode pour ne pas avoir un long code d'une methode
@@ -82,23 +85,23 @@ Affiche le plateau de jeu.
 
 ## Livrable 2
 
-UML Livrable 2 (voir PDF UML_Livrable_2)
+UML LIVRABLE 2 : ![](./UML_Livrable_2.jpg)
 
-POUR COMPILER : 
+- Pour compiler : 
 ```
 javac -sourcepath src src/plateau/*.java -d classes
 ```
-POUR EXECUTER (exemple avec larg et haut 10x10) : 
+- Pour exécuter (exemple avec larg et haut 10x10) : 
 ```
 java -classpath classes plateau.BoardMain 10 10
 ```
 
 ### Atteinte des objectifs
 
-
 - Affichage des portes pour chaque case 
 - Affichage de deux zombies avec deux types différents ( en utilisant la méthode description et ajout dans le main )
 - Affichage de 2 zombies et 2 survivants (roles) et création de 2 équipements et 2 armes 
+
 ```   
 Zombie z1 = new Abomination();
 Zombie z = new Balaise();
@@ -124,7 +127,7 @@ board.getCell()[2][4].addTool(t1);
 
 ##### Création de nouvelles classes : 
 
-- dans package plateau.gamecharacter :
+- Dans package plateau.gamecharacter :
 
 Classes Survivor et Zombie qui héritent de la classe GameCharacter (pour tout les personnages du jeu avec les méthodes communes de des personnages)
 
@@ -133,14 +136,14 @@ Classe Role qui hérite de GameCharacter:
 
 
 Classes des différents types de :
-- dans package plateau.gamecharacter.zombie
+- Dans package plateau.gamecharacter.zombie
   - Zombie :
      - Abomination
      - Balaise
      - Runner
      - Walker
 
-- dans package plateau.gamecharacter.role
+- Dans package plateau.gamecharacter.role
   - Role :
      - Fighter 
      - Keeper
@@ -148,19 +151,19 @@ Classes des différents types de :
      - Snooper
      
 
-- dans package plateau.equipment :
+- Dans package plateau.equipment :
 
 Classes Tool et Weapon qui héritent d Equipement (pour tout les équipements du jeu)
 
 Classes des différents types de :
-- dans plateau.equipment.tool
+- Dans plateau.equipment.tool
   - Tool :
      - Card
      - HealingVial
      - Kit
      - MasterKey
 
-- dans plateau.equipment.weapon
+- Dans plateau.equipment.weapon
   - Weapon :
     - Axe
     - Chainsaw
@@ -174,17 +177,23 @@ Classes des différents types de :
 ### Difficultés restant à résoudre
 - on n'a pas réussi à ouvrir les portes entre les rues ( je pense que nous devons revoir les methodes creatDoors et initDoors)
 - Pas d'affichage d'équipement ni d'arme et de survivants avec un rôle (on arrive à afficher quand pas de rôle)
-- 
+
 
 
 ## Livrable 3
+
+UML LIVRABLE 3 : ![](./UML_Livrable_3.jpg)
+
 - Pour Compiler :
 ``` javac -sourcepath src src/plateau/*.java -d classes ```
+
 - Pour Executer BoardMain :
 ``` java -classpath classes plateau.BoardMain 10 10 ```
+
 - Pour Executer Livrable3 :
 ``` java -classpath classes plateau.Livrable3  ```
-- Pour Compiler Test (Exemple FighterTest dans role ):
+
+- Pour Compiler Test (Exemple FighterTest dans role):
 ``` javac -classpath junit-console.jar:classes test/plateau/role/FighterTest.java  ```
 
 ```
@@ -259,6 +268,9 @@ De manière similaire, la classe Tool représente un outil générique avec des 
 - Exécuter l'action d’attaquer et de se déplacer pour chacun des zombies
 
 ## Livrable 4
+
+UML LIVRABLE 4 : ![](./UML_Livrable_4.jpg)
+
 - Pour Compiler :
 ``` javac -sourcepath src src/plateau/*.java -d classes ```
 - Pour Executer BoardMain :
@@ -270,9 +282,9 @@ De manière similaire, la classe Tool représente un outil générique avec des 
 
 ### Atteinte des objectifs
 
-- l n’y a pas de zombies au départ : fais
+- Il n’y a pas de zombies au départ : fait
 - ⁠ La pharmacie est un lieu de ressourcement pour les survivants qui peuvent y prendre des fioles de guérison ( Pas fait )
-- ⁠ la phase des survivants :
+- ⁠ La phase des survivants :
 - ⁠ un survivant peut dépenser jusqu’à trois points d’action : fait
 - ⁠ Il pourra en dépenser plus au fur et à mesure du jeu, suivant la manière dont évoluera son niveau d’expertise , le niveau d’expertise du survivant augmente à chaque fois qu’il tue un zombie et lorsque le Niveau expertise, franchi un palier, il réalise une action supplémentaire. Si le niveau expertise égal à trois ou sept ou 11 : on a ajouté expert dans attaque action et on a ajouté la condition If. Si on a le niveau expertise égal à t3,7ou11 , on a plus un point d’action
 - ⁠-Lorsque le survivant meurt, il est éliminé du jeu : fait
@@ -287,8 +299,8 @@ De manière similaire, la classe Tool représente un outil générique avec des 
 - ⁠ prendre en main : prendre un objet du sac à dos pour le placer dans sa main : fait
 - ⁠ attaquer un zombie : fait et fonctionne bien. On a acheté la condition de choisir le zombie qui a le moins de points de vie et dans la même classe on a mis si le zombie est tué On ajoute un au niveau d’expertise
 - ⁠ En ce qui concerne les rôles, on les a tous fait, mais on a eu un problème pour relier l’action avec les rôles, même si on a ajouté une méthode pour ajouter l’action spécifique de chaque rôle
-- ⁠ pour la face, j’ai des zombies : Move et attack fonctionne bien , 
-- 
+- ⁠ pour la face, j’ai des zombies : Move et attack fonctionne bien.
+
 
 ### Difficultés restant à résoudre
 - Relier Les roles avec les actions 
@@ -299,22 +311,20 @@ De manière similaire, la classe Tool représente un outil générique avec des 
 # Journal de bord
 
 ## Semaine 1
-Dans cette semaine , on a essayé de faire l'uml pour la premiere partie du projet 
+Dans cette semaine , on a commencé par faire l'UML pour la premiere partie du projet 
 
-on a decidé de présenter le plateau du jeu sous formes de cases ( donc class Cell) avec les coordonnées X et Y ( largeur et longueur )
+on a decidé de présenter le plateau du jeu (Board) sous formes de cases (classe Cell) avec les coordonnées X et Y ( largeur et longueur )
 
-puis on a crée  les classes Building ( immeuble ) et Street (rue) qui hérite de la classe  Cell
+puis on a crée les classes Building ( immeuble ) et Street (rue) qui hérite de la classe  Cell
 et aussi la classe Piece qui hérite de la classe Building ( on a décidé d'initialiser le nombre de porte à 4 portes )
 
-et aussi on a les deux classes Pharmacy et continental qui sont de type Piece ( elles heritent de class Piece )
+On a aussi les deux classes Pharmacy et continental qui sont de type Room (elles heritent de classe Room).
 
-UML: https://lucid.app/lucidchart/8f770340-e719-4bc4-be9b-203c946bc694/edit?viewport_loc=-11%2C-11%2C2219%2C1047%2C0_0&invitationId=inv_414f11db-24cb-4b2c-8f22-12ce575caf60
 
 
 ## Semaine 2
 Nous avons revu notre dyagramme UML , corrigé les erreurs et commencé à coder certaines classes .
 en parallele , nous discutons de la meilleur façon de diviser le plateau , mais nous n'avons pas encore trouvé de solution définitive .
-vous trouvez notre UML en format pdf dans le fichier src.
 
 Nous supposons pour le plateau que c'est une cell[boardSize][boardSize] qui se divise donc en plusieurs cells[i][j] qui possèdent chacune une valeur attribuée allant de 1 à (boardSize)² pour former les cases du jeu.
 Par exemple :
@@ -326,9 +336,9 @@ etc ..
 Nous n'avons pas encore trouvé de solution pour placer les rues et pièces en fonction de ces valeurs.
 
 ## Semaine 3
-Nous avo,s programmé l'algo de création 
+Nous avons programmé l'algorithme de création.
 
-algorithme de création :
+Algorithme de création :
 initialiser toutes les cases à Piece (r) et ensuite placer les rues (|S|) à l'aide de la récursivité:
 
 Tant que la largeur et la hauteur prise sont supérieures à 5 alors on prend un random  x et un random y .
@@ -344,18 +354,18 @@ Ensuite on utilise la récurisivité pour diviser sur 4 en rappelant la fonction
 - Ajout du carrefour principal (CP) à l'intersection des deux rues principales.
 
 ## Semaine 4
-- On a créé un dossier room (pour mettre les classes Room , Pharmacy et Continental ) et un dossier street (pour les classes Street , Egout et CarrefourP) 
-- On a corrigé (s'il y a des erreurs ) chacune des classes pour pouvoir afficher correctement les bouches d'égout et le carrefour principal 
+- On a créé un package room (pour mettre les classes Room , Pharmacy et Continental ) et un package street (pour les classes Street , Egout et CarrefourP) 
+- On a corrigé chacune des classes pour pouvoir afficher correctement les bouches d'égout et le carrefour principal 
 - On a reussi a afficher Pharmacy (P) et Continental (C) sur le plateau (en utilisant random on choisit 2 pièces qu'on remplace, une par Pharmacy, l'autre par Continental)
-- Crée quelque methode de test 
+- Crée quelques méthodes de tests 
 - On cherche comment affciher les portes correctement 
 
 ## Semaine 5
-- les point vu avec le prof en td  corrigés:
-*modification des methodes de board et ajouter des methodes private void +nomdeMethode pour ne pas avoir un long code d'une methode 
-*suppression de la methode print en la remplacant par description pour eviter de la changer a chaque fois qu'on rajoute une classe 
-*mettre junit-console.jar dans le fichier pour reussir a compiler et executer les test 
-*la classe CellTest est changée et on a reussis a compiler et executer 
+- Les points vus avec le prof en TP corrigés:
+ * Modification des méthodes de Board et ajouter des méthodes private void +nomdeMethode pour ne pas avoir un long code d'une méthode 
+ * Suppression de la méthode print en la remplacant par description pour éviter de la changer à chaque fois qu'on ajoute une classe 
+ * Mettre junit-console.jar dans le fichier pour réussir a compiler et exécuter les test 
+ * la classe CellTest est changée et on a reussi à compiler et executer 
 
 ``` 
 javac -classpath junit-console.jar:classes test/plateau/CellTest.java
@@ -389,9 +399,9 @@ Test run finished after 111 ms
 [         6 tests successful      ]
 [         0 tests failed          ]
 ```
-*ajout de methode dans BoardTest , executé et compilé 
-``` elkadaoui@elkadaoui-Latitude-7280:~/Documents/Projet/l2s4-projet-2024$ javac -classpath junit-console.jar:classes test/plateau/*.java
-elkadaoui@elkadaoui-Latitude-7280:~/Documents/Projet/l2s4-projet-2024$ java -jar junit-console.jar -classpath test:classes -select-class plateau.BoardTest
+* Ajout de méthode dans BoardTest , executé et compilé 
+``` /l2s4-projet-2024$ javac -classpath junit-console.jar:classes test/plateau/*.java
+/l2s4-projet-2024$ java -jar junit-console.jar -classpath test:classes -select-class plateau.BoardTest
 
 Thanks for using JUnit! Support its development at https://junit.org/sponsoring
 
@@ -439,19 +449,18 @@ Classe Survivor:
 Sous-classes de survivors pour pour les differents types :Keeper, Lucky, Fighter et Snooper
 
 
-
 ## Semaine 6
-* ajout des methodes en relation avec survivor et zimbie dans la classe Cell 
-*ajout de methode noiseLevel dans cell et dans equipement vu que dans chaque zone on a un bruit et aussi pour chaque equipement on a un bruit , et on a aussi des equipements qui sont silencieux ( à rajouter dans le code )
-*ajout de methode dans survivors en relation avec equipement : ajouter un equipement dans le sac a dos , un boolean pour savoir si le sac est remplis ou pas , ...
-*ajour de la classe Role.java ( Les survivants peuvent avoir des rôles particuliers qui leur sont attribués au début de la partie)
+* Ajout des methodes en relation avec survivor et zimbie dans la classe Cell 
+* Ajout de methode noiseLevel dans cell et dans equipement vu que dans chaque zone on a un bruit et aussi pour chaque equipement on a un bruit , et on a aussi des equipements qui sont silencieux ( à rajouter dans le code )
+*  Ajout de methode dans survivors en relation avec equipement : ajouter un equipement dans le sac a dos , un boolean pour savoir si le sac est remplis ou pas , ...
+* Ajour de la classe Role.java ( Les survivants peuvent avoir des rôles particuliers qui leur sont attribués au début de la partie)
 
 ## Semaine 7
 - Ajout des methodes en relation avec survivor et zimbie dans la classe Cell 
 - Ajout de la partie Evolution dans le livrable 1
-- essaye de plusieur fonction pour afficher les portes pour arriver finalement au resultat suivant :
-``` elkadaoui@elkadaoui-Latitude-7280:~/Documents/Projet/l2s4-projet-2024$ javac -sourcepath src src/plateau/*.java -d classes
-elkadaoui@elkadaoui-Latitude-7280:~/Documents/Projet/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
+- Essais de plusieurs fonctions pour afficher les portes pour arriver finalement au résultat suivant :
+``` /l2s4-projet-2024$ javac -sourcepath src src/plateau/*.java -d classes
+/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
 Plateau de jeu  :
  P   R   E   R   R 
  R   R   S   R   R  
@@ -479,11 +488,12 @@ _________________________
 ```
 
 
-
 ## Semaine 8
-- Affichage le nombre de zombies Dans chaque case avec (en bas ) des explications sur le Type de zombies ( en Attendant Equipement et Survivors...)
+
+- Affichage le nombre de zombies Dans chaque case avec (en bas) des explications sur le Type de zombies ( en Attendant Equipement et Survivors...)
+
 ``` javac -sourcepath src src/plateau/*.java -d classes
-elkadaoui@elkadaoui-Latitude-7280:~/Documents/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
+/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
 Plateau de jeu  :
  P   R   E   C   R  
  R   R   S   R   R  
@@ -511,9 +521,10 @@ Plateau de jeu  :
 Les zombies présents dans la case 1 sont Abomination et Balaise
  ```
 
- - Affichage d'un zombie dans une case choisis dans le Main 
+ - Affichage d'un zombie dans une case choisie dans le Main 
+
  ```   javac -sourcepath src src/plateau/BoardMain.java -d classes
-elkadaoui@elkadaoui-Latitude-7280:~/Documents/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
+/l2s4-projet-2024$ java -classpath classes plateau.BoardMain 5 5
 Plateau de jeu  :
 plateau.Board@36baf30c
  P   R   E   R   R  
