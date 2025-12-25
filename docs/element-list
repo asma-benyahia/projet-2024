@@ -1,0 +1,13 @@
+plateau
+plateau.action
+plateau.equipment
+plateau.equipment.tool
+plateau.equipment.weapon
+plateau.gamecharacter
+plateau.gamecharacter.exception
+plateau.gamecharacter.zombie
+plateau.listchooser
+plateau.listchooser.util
+plateau.role
+plateau.room
+plateau.street
